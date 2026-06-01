@@ -59,3 +59,8 @@ This project is built using pure vanilla web technologies to ensure maximum perf
 - **Localization (i18n):** Add full multi-language support (Hindi, Tamil, Bengali, etc.) to make the app accessible to voters across all Indian states.
 - **Backend Infrastructure:** Implement a database (e.g., Firebase or Node/Express) to store actual user feedback and quiz analytics.
 - **PWA (Progressive Web App):** Configure service workers and a manifest file so users can install the app on their smartphones for offline access on Election Day.
+
+---
+
+#Author 
+YASHASWI SINGH
