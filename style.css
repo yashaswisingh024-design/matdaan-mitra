@@ -504,3 +504,20 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   /* Buttons always full-width on small screens */
   .quiz-footer .btn { width: 100%; justify-content: center; }
 }
+.feedback-card {
+    background: white !important;
+    padding: 2rem;
+    border-radius: 20px;
+}
+
+.feedback-form,
+.feedback-form * {
+    color: #111827 !important;
+}
+
+.fb-input,
+.fb-textarea {
+    border: 1px solid #d1d5db !important;
+    background: white !important;
+    color: #111827 !important;
+}
