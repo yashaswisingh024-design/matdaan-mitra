@@ -3,7 +3,7 @@
    =========================== */
 
 document.addEventListener('DOMContentLoaded', () => {
-
+console.log("Quiz Init Running");
   /* --- Navbar Scroll Effect --- */
   const header = document.querySelector('.site-header');
   window.addEventListener('scroll', () => {
@@ -339,15 +339,9 @@ document.addEventListener('DOMContentLoaded', () => {
     submitBtn.style.display = 'inline-flex';
     submitBtn.disabled = false;
 
-    // Remove any previous submit listener to avoid duplicates
-    const newForm = form.cloneNode(true); // Clone clears event listeners
-    form.parentNode.replaceChild(newForm, form);
-
-    // Re-query after clone
-    const activeForm    = document.getElementById('quiz-form');
-    const activeError   = document.getElementById('quiz-error');
-    const activeSubmit  = document.getElementById('quiz-submit-btn');
-
+    const activeForm = form;
+    const activeError = errorDiv;
+   const activeSubmit = submitBtn;
     // --- Submit handler ---
     activeForm.addEventListener('submit', (e) => {
       e.preventDefault();
@@ -372,11 +366,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // --- Retry handler ---
-    retryBtn.addEventListener('click', () => {
-      document.getElementById('quiz').scrollIntoView({ behavior: 'smooth' });
-      // Small delay so scroll starts before DOM rebuild
-      setTimeout(() => initQuiz(), 350);
+    if (retryBtn) {
+  retryBtn.addEventListener('click', () => {
+    document.getElementById('quiz').scrollIntoView({
+      behavior: 'smooth'
     });
+    setTimeout(() => initQuiz(), 350);
+  });
+}
   }
 
   initQuiz(); // Boot quiz on page load (revealObserver reused from outer scope)
